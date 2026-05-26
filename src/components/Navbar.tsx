@@ -30,15 +30,15 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8 md:py-4"
         aria-label="Main navigation"
       >
         <a
           href="#"
-          className="group flex items-center"
+          className="group flex shrink-0 items-center"
           onClick={handleNavClick}
         >
-          <Logo size="sm" className="transition-transform duration-300 group-hover:scale-105" />
+          <Logo size="nav" className="transition-transform duration-300 group-hover:scale-[1.02]" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -57,7 +57,7 @@ export default function Navbar() {
               href="#reservations"
               className="rounded-sm border border-gold/60 bg-gold/10 px-5 py-2 text-sm font-medium uppercase tracking-widest text-gold transition-all hover:bg-gold hover:text-forest-dark"
             >
-              Reserve
+              Reserve a Table
             </a>
           </li>
         </ul>

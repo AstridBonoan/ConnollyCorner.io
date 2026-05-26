@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import type { RefObject } from 'react'
-import { menuCategories } from '../data/siteData'
+import { menuSections, siteInfo } from '../data/siteData'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 export default function MenuPreview() {
   const { ref, isVisible } = useScrollAnimation()
+  const [activeTab, setActiveTab] = useState(menuSections[0].id)
+
+  const activeSection = menuSections.find((s) => s.id === activeTab) ?? menuSections[0]
 
   return (
     <section
@@ -14,10 +18,10 @@ export default function MenuPreview() {
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div
-          className={`animate-on-scroll mb-16 text-center ${isVisible ? 'visible' : ''}`}
+          className={`animate-on-scroll mb-12 text-center md:mb-16 ${isVisible ? 'visible' : ''}`}
         >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-gold">
-            Culinary Offerings
+            Our Menu
           </p>
           <h2
             id="menu-heading"
@@ -26,64 +30,103 @@ export default function MenuPreview() {
           >
             From Our Kitchen
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-cream/60">
-            A varied menu with something for everyone — from prime steaks to
-            pub classics and chef-driven specials.
+          <p className="mx-auto mt-4 max-w-2xl text-cream/60">
+            Brunch, lunch, and dinner — steaks & chops, chicken, fish, and
+            house specialties. Something for everyone at Connolly&apos;s Corner.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {menuCategories.map((category, i) => (
-            <article
-              key={category.title}
-              className={`animate-on-scroll group relative overflow-hidden rounded-sm bg-forest ${isVisible ? 'visible' : ''}`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+        <div
+          className={`animate-on-scroll mb-10 flex flex-wrap justify-center gap-2 ${isVisible ? 'visible' : ''}`}
+          role="tablist"
+          aria-label="Menu categories"
+        >
+          {menuSections.map((section) => (
+            <button
+              key={section.id}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === section.id}
+              onClick={() => setActiveTab(section.id)}
+              className={`rounded-sm px-4 py-2.5 text-xs font-semibold uppercase tracking-widest transition-all md:px-5 md:text-sm ${
+                activeTab === section.id
+                  ? 'bg-gold text-forest-dark'
+                  : 'border border-cream/15 text-cream/70 hover:border-gold/40 hover:text-gold'
+              }`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/20 to-transparent" />
-              </div>
-
-              <div className="p-6">
-                <h3
-                  className="font-display text-2xl font-semibold text-cream transition-colors group-hover:text-gold"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {category.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream/60">
-                  {category.description}
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold transition-all hover:gap-3"
-                  onClick={(e) => e.preventDefault()}
-                  aria-label={`View full ${category.title} menu`}
-                >
-                  View Full Menu
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </article>
+              {section.title}
+            </button>
           ))}
+        </div>
+
+        <div
+          className={`animate-on-scroll grid gap-10 lg:grid-cols-5 lg:gap-12 ${isVisible ? 'visible' : ''}`}
+          role="tabpanel"
+        >
+          <div className="relative overflow-hidden rounded-sm lg:col-span-2">
+            <img
+              src={activeSection.image}
+              alt={activeSection.title}
+              className="aspect-[4/5] h-full w-full object-cover lg:aspect-auto lg:min-h-[520px]"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-6">
+              <h3
+                className="font-display text-3xl font-semibold text-cream"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                {activeSection.title}
+              </h3>
+              {activeSection.subtitle && (
+                <p className="mt-1 text-sm text-gold">{activeSection.subtitle}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="lg:col-span-3">
+            <ul className="divide-y divide-cream/10">
+              {activeSection.items.map((item) => (
+                <li key={item.name} className="py-5 first:pt-0 last:pb-0">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h4 className="font-display text-xl font-medium text-cream md:text-2xl" style={{ fontFamily: 'var(--font-display)' }}>
+                        {item.name}
+                      </h4>
+                      <p className="mt-1.5 text-sm leading-relaxed text-cream/55">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href={siteInfo.menuUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-sm border border-gold/50 bg-gold/10 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold hover:text-forest-dark"
+          >
+            View Full Menu
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

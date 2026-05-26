@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import MenuPreview from './components/MenuPreview'
+import Specials from './components/Specials'
 import Gallery from './components/Gallery'
 import Reservations from './components/Reservations'
 import Location from './components/Location'
@@ -21,6 +22,7 @@ function App() {
         <Hero />
         <About />
         <MenuPreview />
+        <Specials />
         <Gallery />
         <Reservations />
         <Location />
