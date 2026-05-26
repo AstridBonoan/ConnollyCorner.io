@@ -23,6 +23,8 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Menu', href: '#menu' },
   { label: 'Specials', href: '#specials' },
+  { label: 'Events', href: '#events' },
+  { label: 'Parties', href: '#parties' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Jobs', href: '#jobs' },
   { label: 'Visit', href: '#location' },

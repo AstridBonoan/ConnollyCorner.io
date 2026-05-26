@@ -3,6 +3,8 @@ import Hero from './components/Hero'
 import About from './components/About'
 import MenuPreview from './components/MenuPreview'
 import Specials from './components/Specials'
+import Events from './components/Events'
+import PartyPlanner from './components/PartyPlanner'
 import Gallery from './components/Gallery'
 import Reservations from './components/Reservations'
 import Jobs from './components/Jobs'
@@ -24,6 +26,8 @@ function App() {
         <About />
         <MenuPreview />
         <Specials />
+        <Events />
+        <PartyPlanner />
         <Gallery />
         <Reservations />
         <Jobs />
