@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { navLinks, siteInfo } from '../data/siteData'
+import Logo from './Logo'
+import { navLinks } from '../data/siteData'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -34,18 +35,10 @@ export default function Navbar() {
       >
         <a
           href="#"
-          className="group flex flex-col leading-none"
+          className="group flex items-center"
           onClick={handleNavClick}
         >
-          <span
-            className="font-display text-2xl font-semibold tracking-wide text-cream transition-colors group-hover:text-gold md:text-3xl"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            {siteInfo.name}
-          </span>
-          <span className="mt-0.5 text-[10px] uppercase tracking-[0.25em] text-gold/70">
-            Maspeth · Queens
-          </span>
+          <Logo size="sm" className="transition-transform duration-300 group-hover:scale-105" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

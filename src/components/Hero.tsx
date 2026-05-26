@@ -1,4 +1,5 @@
-import { siteInfo } from '../data/siteData'
+import { siteInfo, images } from '../data/siteData'
+import Logo from './Logo'
 
 export default function Hero() {
   return (
@@ -9,7 +10,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop&q=80"
+          src={images.hero}
           alt=""
           className="h-full w-full object-cover"
           loading="eager"
@@ -26,16 +27,14 @@ export default function Hero() {
           Maspeth, Queens · Est. Neighborhood Favorite
         </p>
 
-        <h1
-          className="animate-fade-up font-display text-5xl font-semibold leading-tight text-cream sm:text-6xl md:text-7xl lg:text-8xl"
-          style={{
-            fontFamily: 'var(--font-display)',
-            animationDelay: '0.25s',
-            animationFillMode: 'both',
-          }}
+        <div
+          className="animate-fade-up"
+          style={{ animationDelay: '0.25s', animationFillMode: 'both' }}
         >
-          {siteInfo.name}
-        </h1>
+          <Logo size="lg" className="mx-auto mb-6 drop-shadow-2xl" />
+        </div>
+
+        <h1 className="sr-only">{siteInfo.name}</h1>
 
         <div
           className="animate-fade-up mx-auto my-6 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent md:my-8 md:w-32"

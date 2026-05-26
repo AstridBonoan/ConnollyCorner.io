@@ -1,4 +1,5 @@
 import { navLinks, siteInfo, socialLinks } from '../data/siteData'
+import Logo from './Logo'
 
 function SocialIcon({ icon }: { icon: string }) {
   if (icon === 'instagram') {
@@ -30,13 +31,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <p
-              className="font-display text-3xl font-semibold text-cream"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              {siteInfo.name}
-            </p>
-            <p className="mt-2 text-sm italic text-cream/50">
+            <Logo size="md" className="mb-3" />
+            <p className="text-sm italic text-cream/50">
               Authentic Irish hospitality in the heart of Maspeth.
             </p>
           </div>

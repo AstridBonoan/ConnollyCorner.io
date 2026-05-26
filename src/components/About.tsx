@@ -1,4 +1,5 @@
 import type { RefObject } from 'react'
+import { images } from '../data/siteData'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 export default function About() {
@@ -70,8 +71,8 @@ export default function About() {
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <img
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=1000&fit=crop&q=80"
-              alt="Connolly's Corner outdoor beer garden"
+              src={images.outdoorPatio}
+              alt="Connolly's Corner outdoor patio with warm evening lighting"
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
             />

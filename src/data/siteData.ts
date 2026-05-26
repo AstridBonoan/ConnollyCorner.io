@@ -1,3 +1,5 @@
+import { images } from '../utils/images'
+
 export const siteInfo = {
   name: "Connolly's Corner",
   tagline: 'Irish Pub • Steaks • Chops • Chicken • Fish • House Specials',
@@ -14,6 +16,8 @@ export const siteInfo = {
   ],
 }
 
+export { images }
+
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Menu', href: '#menu' },
@@ -27,78 +31,73 @@ export const menuCategories = [
     title: 'Steaks & Chops',
     description:
       'Prime cuts, perfectly charred and finished with classic steakhouse technique.',
-    image:
-      'https://images.unsplash.com/photo-1600891960792-0326c7108b09?w=600&h=450&fit=crop&q=80',
+    image: images.menu.steak,
   },
   {
     title: 'Chicken Dishes',
     description:
       'From Chicken Marsala to Francese — comfort food elevated with Irish hospitality.',
-    image:
-      'https://images.unsplash.com/photo-1598515214210-89f3bca8ae07?w=600&h=450&fit=crop&q=80',
+    image: images.menu.chicken,
   },
   {
     title: 'Seafood & Fish',
     description:
       'Fresh catches and coastal flavors, including Cajun-dusted shrimp and daily specials.',
-    image:
-      'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&h=450&fit=crop&q=80',
+    image: images.menu.seafood,
   },
   {
     title: 'House Specials',
     description:
       "Chef's rotating creations — seasonal ingredients, bold flavors, always memorable.",
-    image:
-      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=450&fit=crop&q=80',
+    image: images.menu.specials,
   },
   {
     title: 'Pub Classics',
     description:
       'French onion soup, pot pies, and the timeless favorites that keep neighbors coming back.',
-    image:
-      'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=450&fit=crop&q=80',
+    image: images.menu.classics,
   },
 ]
 
 export const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=800&fit=crop&q=80',
-    alt: 'Warm pub interior with ambient lighting',
+    src: images.diningRoom,
+    alt: 'Private event dining room with elegant table settings',
     tall: true,
   },
   {
-    src: 'https://images.unsplash.com/photo-1600891960792-0326c7108b09?w=600&h=400&fit=crop&q=80',
-    alt: 'Grilled steak with vegetables',
-    tall: false,
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&h=400&fit=crop&q=80',
-    alt: 'Craft cocktails at the bar',
-    tall: false,
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=800&fit=crop&q=80',
-    alt: 'Outdoor beer garden seating',
+    src: images.outdoorPatio,
+    alt: 'Outdoor patio seating with warm evening lighting',
     tall: true,
   },
   {
-    src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop&q=80',
-    alt: 'Elegant table setting',
+    src: images.interiorOfficial,
+    alt: 'Intimate dining room with burgundy booths and wood tables',
     tall: false,
   },
   {
-    src: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=400&fit=crop&q=80',
-    alt: 'Fresh seasonal salad',
+    src: images.heroOfficial,
+    alt: 'Connolly\'s Corner exterior and neighborhood atmosphere',
     tall: false,
   },
   {
-    src: 'https://images.unsplash.com/photo-1578474846511-04fa13366350?w=600&h=600&fit=crop&q=80',
-    alt: 'Main bar with sports atmosphere',
+    src: images.menu.steak,
+    alt: 'Grilled steak with vegetables and mashed potatoes',
+    tall: false,
+  },
+  {
+    src: images.menu.seafood,
+    alt: 'Cajun-dusted shrimp with corn salsa',
+    tall: false,
+  },
+  {
+    src: images.social,
+    alt: 'Guests enjoying the warm pub atmosphere',
     tall: true,
   },
   {
-    src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop&q=80',
-    alt: 'Signature brunch dish',
+    src: images.gallery.bar,
+    alt: 'Craft cocktails and spirits at the main bar',
     tall: false,
   },
 ]
