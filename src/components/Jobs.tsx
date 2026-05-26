@@ -1,4 +1,5 @@
 import type { RefObject } from 'react'
+import JobApplicationForm from './JobApplicationForm'
 import { jobOpenings, siteInfo } from '../data/siteData'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
@@ -30,8 +31,8 @@ export default function Jobs() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-cream/60">
             We&apos;re hiring! Become part of our team at Maspeth&apos;s
-            neighborhood Irish pub — apply below and we&apos;ll get back to you
-            ASAP.
+            neighborhood Irish pub — fill out the application below and
+            we&apos;ll get back to you ASAP.
           </p>
         </div>
 
@@ -42,16 +43,11 @@ export default function Jobs() {
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
               Now Hiring
             </h3>
-            <p className="mb-6 text-sm text-cream/60">
-              Select a role when you submit your application. Questions?
-              Call us at{' '}
-              <a
-                href={`tel:${siteInfo.phone.replace(/\D/g, '')}`}
-                className="text-gold transition-colors hover:text-gold-light"
-              >
-                {siteInfo.phone}
-              </a>
-              .
+            <p className="mb-6 text-sm leading-relaxed text-cream/60">
+              Connolly&apos;s Corner is always looking for friendly, hardworking
+              people who love hospitality. Whether you&apos;re behind the bar,
+              on the floor, or in the kitchen — there&apos;s a place for you
+              here.
             </p>
 
             <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
@@ -82,52 +78,34 @@ export default function Jobs() {
               ))}
             </ul>
 
+            <div className="mt-8 rounded-sm border border-gold/20 bg-forest-dark/50 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                Prefer to call?
+              </p>
+              <p className="mt-2 text-sm text-cream/60">
+                Reach us directly at{' '}
+                <a
+                  href={`tel:${siteInfo.phone.replace(/\D/g, '')}`}
+                  className="font-medium text-cream transition-colors hover:text-gold"
+                >
+                  {siteInfo.phone}
+                </a>
+              </p>
+            </div>
+
             <a
-              href={siteInfo.jobsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-widest text-forest-dark transition-all hover:bg-gold-light sm:w-auto"
+              href="#application"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-widest text-forest-dark transition-all hover:bg-gold-light sm:w-auto lg:hidden"
             >
               Apply Now
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
             </a>
           </div>
 
           <div
-            className={`animate-on-scroll overflow-hidden rounded-sm border border-cream/10 bg-cream lg:col-span-3 ${isVisible ? 'visible' : ''}`}
+            className={`animate-on-scroll lg:col-span-3 ${isVisible ? 'visible' : ''}`}
             style={{ transitionDelay: '150ms' }}
           >
-            <iframe
-              title="Connolly's Corner job application"
-              src={siteInfo.jobsUrl}
-              className="h-[720px] w-full border-0 md:h-[800px]"
-              loading="lazy"
-            />
-            <p className="border-t border-cream-dark/30 bg-cream px-4 py-3 text-center text-xs text-bark/60">
-              Application form powered by SpotHopper.{' '}
-              <a
-                href={siteInfo.jobsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-bark underline-offset-2 hover:underline"
-              >
-                Open in a new tab
-              </a>{' '}
-              if the form doesn&apos;t load.
-            </p>
+            <JobApplicationForm />
           </div>
         </div>
       </div>

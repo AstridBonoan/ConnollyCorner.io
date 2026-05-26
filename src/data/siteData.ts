@@ -8,8 +8,6 @@ export const siteInfo = {
   phone: '(718) 565-7383',
   email: 'hello@connollyscorner.com',
   specialsUrl: 'https://connollyscorner.com/queens-connolly-s-corner-happy-hours-specials',
-  jobsUrl:
-    'https://tmt.spotapps.co/job-listings?spot_id=6433&callback_url=http%3A%2F%2Fconnollyscorner.com%2F-party',
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2!2d-73.896!3d40.726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f3c8b8b8b8b%3A0x1234567890abcdef!2s71-15%20Grand%20Ave%2C%20Queens%2C%20NY%2011378!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus',
   hours: [
