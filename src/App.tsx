@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Watermark from './components/Watermark'
 import Hero from './components/Hero'
 import About from './components/About'
 import MenuPreview from './components/MenuPreview'
@@ -21,7 +22,8 @@ function App() {
         Skip to content
       </a>
       <Navbar />
-      <main>
+      <Watermark />
+      <main className="relative z-[1]">
         <Hero />
         <About />
         <MenuPreview />
@@ -33,7 +35,9 @@ function App() {
         <Jobs />
         <Location />
       </main>
-      <Footer />
+      <div className="relative z-[1]">
+        <Footer />
+      </div>
     </>
   )
 }

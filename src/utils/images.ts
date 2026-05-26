@@ -24,4 +24,5 @@ export const images = {
     bar: asset('images/gallery-bar.jpg'),
     brunch: asset('images/gallery-brunch.jpg'),
   },
+  bonoanLabs: asset('images/bonoan-labs-logo.png'),
 } as const
