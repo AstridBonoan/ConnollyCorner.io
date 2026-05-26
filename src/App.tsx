@@ -5,6 +5,7 @@ import MenuPreview from './components/MenuPreview'
 import Specials from './components/Specials'
 import Gallery from './components/Gallery'
 import Reservations from './components/Reservations'
+import Jobs from './components/Jobs'
 import Location from './components/Location'
 import Footer from './components/Footer'
 
@@ -25,6 +26,7 @@ function App() {
         <Specials />
         <Gallery />
         <Reservations />
+        <Jobs />
         <Location />
       </main>
       <Footer />
