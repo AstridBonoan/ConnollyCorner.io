@@ -18,7 +18,7 @@ function SocialIcon({ icon }: { icon: string }) {
   }
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12.271 19.998c-2.329 0-4.532-.635-6.418-1.745l-.422.422-2.068 2.068a.5.5 0 01-.707-.707l2.068-2.068.422-.422A9.956 9.956 0 012.002 12C2.002 6.477 6.477 2 12 2s9.998 4.477 9.998 9.998c0 5.523-4.475 9.998-9.727 9.998zM8.918 8.5c-.207.507-.317 1.085-.317 1.712 0 2.633 2.134 4.767 4.767 4.767.627 0 1.205-.11 1.712-.317l-1.004-1.004a2.768 2.768 0 01-1.708.586c-1.529 0-2.768-1.239-2.768-2.768 0-.627.213-1.204.586-1.708L8.918 8.5zm6.164 6.164l-1.004-1.004a2.768 2.768 0 001.004-2.124c0-1.529-1.239-2.768-2.768-2.768-.804 0-1.529.344-2.037.892l-1.004-1.004A4.767 4.767 0 0112.368 7.5c2.633 0 4.767 2.134 4.767 4.767 0 1.205-.447 2.305-1.183 3.147z" />
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.291 19.497h2.038L6.486 3.24H4.298l13.312 17.41z" />
     </svg>
   )
 }
@@ -64,6 +64,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/10 text-cream/60 transition-all hover:border-gold hover:text-gold"
                 >

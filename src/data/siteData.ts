@@ -127,9 +127,9 @@ export const galleryImages = [
 ]
 
 export const socialLinks = [
-  { label: 'Instagram', href: '#', icon: 'instagram' },
-  { label: 'Facebook', href: '#', icon: 'facebook' },
-  { label: 'Yelp', href: '#', icon: 'yelp' },
+  { label: 'Instagram', href: 'https://www.instagram.com/connollyscorner', icon: 'instagram' },
+  { label: 'Facebook', href: 'https://www.facebook.com/connollys.corner/', icon: 'facebook' },
+  { label: 'X (Twitter)', href: 'https://x.com/CornerConnolly', icon: 'x' },
 ]
 
 export const jobOpenings = [
